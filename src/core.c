@@ -134,6 +134,7 @@ void rebx_register_default_params(struct rebx_extras* rebx){
     rebx_register_param(rebx, "gas_df_xmin", REBX_TYPE_DOUBLE);
     rebx_register_param(rebx, "gas_df_hr", REBX_TYPE_DOUBLE);
     rebx_register_param(rebx, "gas_df_Qd", REBX_TYPE_DOUBLE);
+    rebx_register_param(rebx, "stark_acc", REBX_TYPE_DOUBLE);
 
 }
 

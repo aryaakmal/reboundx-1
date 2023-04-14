@@ -61,6 +61,17 @@
 #include "reboundx.h"
 
 void rebx_stark_force(struct reb_simulation* const sim, struct rebx_force* const force, struct reb_particle* const particles, const int N){
+    struct rebx_extras* const rebx = sim->extras;
+    for (int i=0; i<N; i++){
+        const double* stark_acc = rebx_get_param(rebx, particles[i].ap, "stark_acc");
+        if (stark_acc != NULL){
+            particles[i].ax += *stark_acc;
+        }
+    }
+}
+/*
+void rebx_stark_force(struct reb_simulation* const sim, struct rebx_force* const force, struct reb_particle* const particles, const int N){
     particles[1].ax += 0.01;
 }
+*/
 

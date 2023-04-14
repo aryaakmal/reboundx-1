@@ -15,6 +15,9 @@ int main(int argc, char* argv[]){
     struct rebx_extras* rebx = rebx_attach(sim);  // first initialize rebx
     struct rebx_force* stark = rebx_load_force(rebx, "stark_force"); // add our new force
     rebx_add_force(rebx, stark);
+    rebx_set_param_double(rebx, &sim->particles[1].ap, "stark_acc", 0.01);
+
+
 
     double tmax = 100000.;
     reb_integrate(sim, tmax);
